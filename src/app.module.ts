@@ -1,8 +1,12 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule, ConfigService } from 'nestjs-config';
-import * as path from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from 'nestjs-config';
 import { LoggerModule } from 'nestjs-pino';
+import * as path from 'path';
+import { ArticleRevisionModule } from './article-revision/article-revision.module';
+import { ArticleModule } from './article/article.module';
+import { AuthModule } from './auth/auth.module';
+import { DraftModule } from './draft/draft.module';
 import { UserModule } from './user/user.module';
 
 const ENV = process.env.NODE_ENV;
@@ -27,6 +31,10 @@ const ENV = process.env.NODE_ENV;
       },
     }),
     UserModule,
+    AuthModule,
+    ArticleModule,
+    ArticleRevisionModule,
+    DraftModule,
   ],
   controllers: [],
   providers: [],

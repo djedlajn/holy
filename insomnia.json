@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "27a8b459-a267-4ccc-a7a1-6ce07ae5d380",
+		"name": "Holy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ARTICLE",
+			"item": [
+				{
+					"name": "Article Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Gob Man 2\",\n    \"tags\": [\n        \"Must read\"\n    ],\n    \"published\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/api/article/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"api",
+								"article",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Article Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Kill Born\",\n\t\"tags\": [\"Must read\", \"good stuff\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/api/article/700f743b-51c9-4894-ba93-0262ea1b9322/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"api",
+								"article",
+								"700f743b-51c9-4894-ba93-0262ea1b9322",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Articles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Main Kampf 2\",\n\t\"tags\": [\"Must read\", \"good stuff\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/api/article/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"api",
+								"article",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "dot.kadza@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Varvarinac93#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4200/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "DRAFT",
+			"item": [
+				{
+					"name": "Create Draft",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Neki tamo\",\n\t\"tags\": [\"Must read\", \"good stuff\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/api/draft/article/700f743b-51c9-4894-ba93-0262ea1b9322/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"api",
+								"draft",
+								"article",
+								"700f743b-51c9-4894-ba93-0262ea1b9322",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Draft",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Kill Borzn\",\n\t\"tags\": [\"Must read\", \"good stuff\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/api/draft/80a15314-0060-43fa-868a-ebf653392f54/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"api",
+								"draft",
+								"80a15314-0060-43fa-868a-ebf653392f54",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Draft",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Kill Born\",\n\t\"tags\": [\"Must read\", \"good stuff\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/api/draft/c49aa763-860e-45b1-859d-06dcee0a8ed5/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"api",
+								"draft",
+								"c49aa763-860e-45b1-859d-06dcee0a8ed5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Draft",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Kill Born\",\n\t\"tags\": [\"Must read\", \"good stuff\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/api/draft/3de16276-6852-4491-8f74-4dac4e2aae27/publish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"api",
+								"draft",
+								"3de16276-6852-4491-8f74-4dac4e2aae27",
+								"publish"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "tester3@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Tester12#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4200/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRvdC5rYWR6YUBnbWFpbC5jb20iLCJpYXQiOjE1NzczNTE2MzksImV4cCI6MTU3NzM1NTIzOX0.beP-SdwLIIi6Y-GIrR4yblcHaSCdOV0vDrtx4NuRd1s",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7feee4e2-126f-4b9c-b6dc-d9f1eafd87fb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "807fb057-1cff-48a4-b694-b5e6ac6f0928",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
