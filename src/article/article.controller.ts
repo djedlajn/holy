@@ -26,13 +26,13 @@ import { UpdateArticleDto } from './dto/update.article.dto';
 import { Article } from './entity/article.entity';
 
 @ApiTags('Article')
-@ApiBearerAuth()
-@UseGuards(AuthGuard('jwt'))
 @Controller('article')
 export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}
 
   @ApiCreatedResponse({ description: 'Creates new Article', type: Article })
+  @UseGuards(AuthGuard('jwt'))
+  @ApiBearerAuth()
   @Post('/create')
   createArticle(
     @Body() data: CreateArticleDto,
@@ -43,6 +43,8 @@ export class ArticleController {
 
   @Post(':id/publish')
   @ApiCreatedResponse({ description: 'Publishes new Article', type: Article })
+  @UseGuards(AuthGuard('jwt'))
+  @ApiBearerAuth()
   publishArticle(
     @Param('id', new ParseUUIDPipe()) id: string,
     @Body() data: PublishArticleDto,
@@ -53,6 +55,8 @@ export class ArticleController {
 
   @Post(':id/update')
   @ApiCreatedResponse({ description: 'Updates new Article', type: Article })
+  @UseGuards(AuthGuard('jwt'))
+  @ApiBearerAuth()
   updateArticle(
     @Param('id', new ParseUUIDPipe()) id: string,
     @Body() data: UpdateArticleDto,
@@ -62,6 +66,8 @@ export class ArticleController {
   }
 
   @Patch(':id/revision/:revId')
+  @UseGuards(AuthGuard('jwt'))
+  @ApiBearerAuth()
   @ApiDefaultResponse({
     description: 'Updates revision of article',
     type: Article,
@@ -83,6 +89,8 @@ export class ArticleController {
   }
 
   @Get(':id')
+  @UseGuards(AuthGuard('jwt'))
+  @ApiBearerAuth()
   @ApiDefaultResponse({
     description: 'Gets article by id',
     type: Article,

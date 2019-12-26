@@ -36,7 +36,7 @@ Run in production mode (reads enviroment from env/.env.production )
 yarn start:prod
 ```
 
-Swagger runs on port `4200` by default and is available via [link](http://localhost:4200)
+Swagger runs on port `4200` by default and is available via [link](http://localhost:4200/api)
 
 API's Collection for [Insomnia](https://insomnia.rest/) is located in repo named `insomnia.json`
 
